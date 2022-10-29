@@ -1,0 +1,209 @@
+main {
+    width: 500px;
+    margin: auto;
+    // margin-top: 0;
+    padding: 10px;
+    text-align: center;
+    .input {
+        background-color: $Very-Dark-Desaturated-Blue;
+        color: white;
+        caret-color: white;
+        padding: 20px;
+        display: flex;
+        gap: 10px;
+        margin-bottom: 25px;
+        border-radius: 4px;
+        .circle{
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            border: 1px solid #393a4b;
+        }
+        input{
+            background-color: inherit;
+            border: none;
+            width: 100%;
+            color: inherit;
+            font-size: 20px;
+            font-family: "Josefin Sans", sans-serif;
+            padding-left: 1rem;
+            &:focus{
+                outline: none;
+            }
+        }
+    }
+    .main-container{
+        background-color: $Very-Dark-Desaturated-Blue;
+        .controls{
+            padding: 20px;
+            display: grid;
+            gap: 10px;
+            grid-template-columns: 30% 40% 30%;
+            color: #e3e4f161;
+            background-color: $Very-Dark-Desaturated-Blue;
+            font-size: 14px;
+            .items-left{
+                text-align: start;
+            }
+            ul{
+                list-style: none;
+                display: flex;
+                gap: 10px;
+                text-transform: capitalize;
+                li{
+                    cursor: pointer;
+                    transition: 0.4s ease all;
+                    &:hover{
+                        color: white;
+                    }
+                    &.active{
+                        color: $Bright-Blue;
+                    }
+                }
+            }
+        }
+        .task{
+            background-color: $Very-Dark-Desaturated-Blue;
+            display: flex;
+            justify-content: space-between;
+            align-self: center;
+            padding: 20px;
+            border-bottom: 1px solid #e3e4f10f;
+            .part-1{
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                color: inherit;
+                .circle{
+                    width: 22px;
+                    height: 22px;
+                    border-radius: 50%;
+                    cursor: pointer;
+                    transition: 0.5s ease-in-out;
+                    border: 1px solid #393a4b;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    transition: 0.5s ease-in-out;
+                    &.checked{
+                        border: none;
+                        background: linear-gradient(to right, #55ddff, #c058f3);
+                    }
+                    &:hover{
+                        border: #c058f3 1px solid;
+                    }
+                }
+                p{
+                   color: white;
+                   &.checked {
+                    text-decoration: line-through;
+                    color: $Very-Dark-Grayish-Blue;
+                   } 
+                }
+            }
+            .delete{
+                width: 15px;
+                height: 15px;
+                cursor: pointer;
+        
+
+            }
+        }
+        .cleare-complated{
+            cursor: pointer;
+            transition: 0.4s ease all;
+            &:hover{
+                color: white;
+            }
+        }
+    }
+}
+
+.app.light {
+    main {
+        .input {
+            background-color: white;
+            color: black;
+            box-shadow: 0 0 10px 15px #00000012;
+            .circle{
+                border: 1px solid #393a4b6b;
+            }
+            input{
+                caret-color: black;
+            }
+        }
+        .main-container{
+            background-color: white;
+            box-shadow: 0 0 10px 15px #00000012;
+            .controls{
+                color: #00000096;
+                background-color: white;
+                ul{
+                    li{
+                        &:hover{
+                            color: black;
+                        }
+                    }
+                }
+                .cleare-complated{
+                    &:hover{
+                        color: black;
+                    }
+                }
+                .filter{
+                    background-color: white;
+                }
+            }
+            .task{
+                background-color: white;
+                border-bottom: 1px solid #00000021;
+                color: black;
+                .part-1{
+                    .circle{
+                        border-color: #393a4b6b;
+                    }
+                    p{
+                        color: black;
+                        font-size: 18px;
+                        &.checked {
+                            color: $Very-Dark-Grayish-Blue;
+                           } 
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+
+@media (max-width : 668px) {
+    main{
+        width: 90%;
+        .main-container{
+            .controls{
+                display: flex;
+                justify-content: space-between;
+                position: relative;
+                .filter{
+                    position: absolute;
+                    bottom: -65px;
+                    left: 0;
+                    width: 100%;
+                    background-color: hsl(235, 24%, 19%);
+                    padding: 20px;
+                    display: flex;
+                    justify-content: center;
+
+                }
+            }
+        }
+    }
+    .app.light{
+        .filter{
+            background-color: white;
+            box-shadow: 0 0 10px 15px #00000012;
+        }
+        
+    }
+}

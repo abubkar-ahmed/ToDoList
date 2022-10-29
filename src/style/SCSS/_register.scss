@@ -1,0 +1,111 @@
+.register-main{
+    background-color: $Very-Dark-Desaturated-Blue;
+    padding: 2.7rem 1rem;
+    border-radius: 4px;
+    text-align: center;
+    .err-msg{
+        color: #db3a3a;
+        margin: 1rem;
+    }
+    form{
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        .register-input{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            .circle{
+                width: 16px;
+                height: 16px;
+                border-radius: 50%;
+                border: 1px solid #393a4b;
+            }
+            input{
+                background-color: $Very-Dark-Desaturated-Blue;
+                padding: 0.7rem;
+                color: white;
+                width: 100%;
+                border: none;
+                border-bottom: 1px solid #e3e4f10f;
+                &:focus{
+                    outline: none;
+                }
+                &.invailed{
+                    border-bottom: 1px solid #db3a3a;
+                    &::placeholder{
+                        color: #db3a3a;
+                    }
+                }
+    
+            }
+        }
+        button{
+            width: 8rem;
+            color: $Bright-Blue;
+            background-color: transparent;
+            border: none;
+            font-size: 1.2rem;
+            align-self: center;
+            padding: 7px;
+            border-bottom: 1px solid #e3e4f10f;
+            cursor: pointer;
+            transition: 0.7s ease all;
+            margin-bottom: 1rem;
+            &:hover{
+                border-bottom: 1px solid white; 
+            }
+        }
+
+    }
+    .to-login{
+        color: white;
+        text-align: center;
+        margin-top: 1rem;
+        a{
+            color: $Bright-Blue;
+            text-decoration: none;
+        }
+    }
+}
+
+
+.app.light {
+    .register-main{
+        background-color: white;
+        box-shadow: 0 0 10px 15px #00000012;
+        form{
+            .register-input{
+                .circle{
+                    border: 1px solid #393a4b6b;
+                }
+                input{
+                    background-color: white;
+                    color: black;
+                    border-bottom: 1px solid #00000021;
+                    &.invailed{
+                        border-bottom: 1px solid #db3a3a;
+                        &::placeholder{
+                            color: #db3a3a;
+                        }
+                    }
+                }
+            }
+            button{
+                color: $Bright-Blue;
+                border-bottom: 1px solid #00000021;
+                &:hover{
+                    border-bottom: 1px solid $Bright-Blue; 
+                }
+            }
+    
+        }
+        .to-login{
+            color: #000000bf;
+            a{
+                color: $Bright-Blue;
+            }
+        }
+    }
+}

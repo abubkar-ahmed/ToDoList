@@ -1,0 +1,552 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  vertical-align: baseline;
+  box-sizing: border-box;
+}
+
+.app {
+  width: 100%;
+  min-height: 100vh;
+  font-family: "Josefin Sans", sans-serif;
+  background-image: url(./imgs/bg-desktop-dark.jpg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-color: hsl(235deg, 21%, 11%);
+  padding: 70px 0;
+}
+
+nav {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  display: flex;
+  gap: 1.5rem;
+}
+nav a {
+  text-decoration: none;
+  color: white;
+  transition: 0.4s ease all;
+}
+nav a:hover {
+  color: hsl(220deg, 98%, 61%);
+}
+nav a.active {
+  color: hsl(220deg, 98%, 61%);
+}
+nav.logged-in {
+  justify-content: center;
+  align-items: center;
+}
+nav.logged-in p {
+  color: white;
+}
+
+.app.light {
+  background-image: url(./imgs/bg-desktop-light.jpg);
+  background-color: hsl(0deg, 0%, 98%);
+}
+.app.light nav a {
+  text-decoration: none;
+  color: white;
+  transition: 0.4s ease all;
+}
+.app.light nav a:hover {
+  color: hsl(235deg, 21%, 11%);
+}
+.app.light nav a.active {
+  color: hsl(235deg, 21%, 11%);
+}
+
+@media (max-width: 668px) {
+  .app {
+    background-image: url(./imgs/bg-mobile-dark.jpg);
+  }
+  .app.light {
+    background-image: url(./imgs/bg-mobile-light.jpg);
+  }
+  nav {
+    top: 40px;
+    right: 50%;
+    transform: translate(50%, 0%);
+  }
+}
+header {
+  width: 500px;
+  margin: auto;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+header a {
+  text-decoration: none;
+}
+header a h1 {
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  font-size: 35px;
+  padding-top: 7px;
+}
+header img {
+  cursor: pointer;
+  width: 26px;
+  height: 26px;
+}
+
+@media (max-width: 668px) {
+  header {
+    width: 90%;
+    margin-bottom: 20px;
+  }
+}
+main {
+  width: 500px;
+  margin: auto;
+  padding: 10px;
+  text-align: center;
+}
+main .input {
+  background-color: hsl(235deg, 24%, 19%);
+  color: white;
+  caret-color: white;
+  padding: 20px;
+  display: flex;
+  gap: 10px;
+  margin-bottom: 25px;
+  border-radius: 4px;
+}
+main .input .circle {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 1px solid #393a4b;
+}
+main .input input {
+  background-color: inherit;
+  border: none;
+  width: 100%;
+  color: inherit;
+  font-size: 20px;
+  font-family: "Josefin Sans", sans-serif;
+  padding-left: 1rem;
+}
+main .input input:focus {
+  outline: none;
+}
+main .main-container {
+  background-color: hsl(235deg, 24%, 19%);
+}
+main .main-container .controls {
+  padding: 20px;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 30% 40% 30%;
+  color: rgba(227, 228, 241, 0.3803921569);
+  background-color: hsl(235deg, 24%, 19%);
+  font-size: 14px;
+}
+main .main-container .controls .items-left {
+  text-align: start;
+}
+main .main-container .controls ul {
+  list-style: none;
+  display: flex;
+  gap: 10px;
+  text-transform: capitalize;
+}
+main .main-container .controls ul li {
+  cursor: pointer;
+  transition: 0.4s ease all;
+}
+main .main-container .controls ul li:hover {
+  color: white;
+}
+main .main-container .controls ul li.active {
+  color: hsl(220deg, 98%, 61%);
+}
+main .main-container .task {
+  background-color: hsl(235deg, 24%, 19%);
+  display: flex;
+  justify-content: space-between;
+  align-self: center;
+  padding: 20px;
+  border-bottom: 1px solid rgba(227, 228, 241, 0.0588235294);
+}
+main .main-container .task .part-1 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: inherit;
+}
+main .main-container .task .part-1 .circle {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.5s ease-in-out;
+  border: 1px solid #393a4b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s ease-in-out;
+}
+main .main-container .task .part-1 .circle.checked {
+  border: none;
+  background: linear-gradient(to right, #55ddff, #c058f3);
+}
+main .main-container .task .part-1 .circle:hover {
+  border: #c058f3 1px solid;
+}
+main .main-container .task .part-1 p {
+  color: white;
+}
+main .main-container .task .part-1 p.checked {
+  text-decoration: line-through;
+  color: hsl(235deg, 19%, 35%);
+}
+main .main-container .task .delete {
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+}
+main .main-container .cleare-complated {
+  cursor: pointer;
+  transition: 0.4s ease all;
+}
+main .main-container .cleare-complated:hover {
+  color: white;
+}
+
+.app.light main .input {
+  background-color: white;
+  color: black;
+  box-shadow: 0 0 10px 15px rgba(0, 0, 0, 0.0705882353);
+}
+.app.light main .input .circle {
+  border: 1px solid rgba(57, 58, 75, 0.4196078431);
+}
+.app.light main .input input {
+  caret-color: black;
+}
+.app.light main .main-container {
+  background-color: white;
+  box-shadow: 0 0 10px 15px rgba(0, 0, 0, 0.0705882353);
+}
+.app.light main .main-container .controls {
+  color: rgba(0, 0, 0, 0.5882352941);
+  background-color: white;
+}
+.app.light main .main-container .controls ul li:hover {
+  color: black;
+}
+.app.light main .main-container .controls .cleare-complated:hover {
+  color: black;
+}
+.app.light main .main-container .controls .filter {
+  background-color: white;
+}
+.app.light main .main-container .task {
+  background-color: white;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1294117647);
+  color: black;
+}
+.app.light main .main-container .task .part-1 .circle {
+  border-color: rgba(57, 58, 75, 0.4196078431);
+}
+.app.light main .main-container .task .part-1 p {
+  color: black;
+  font-size: 18px;
+}
+.app.light main .main-container .task .part-1 p.checked {
+  color: hsl(235deg, 19%, 35%);
+}
+
+@media (max-width: 668px) {
+  main {
+    width: 90%;
+  }
+  main .main-container .controls {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+  }
+  main .main-container .controls .filter {
+    position: absolute;
+    bottom: -65px;
+    left: 0;
+    width: 100%;
+    background-color: hsl(235deg, 24%, 19%);
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+  }
+  .app.light .filter {
+    background-color: white;
+    box-shadow: 0 0 10px 15px rgba(0, 0, 0, 0.0705882353);
+  }
+}
+.register-main {
+  background-color: hsl(235deg, 24%, 19%);
+  padding: 2.7rem 1rem;
+  border-radius: 4px;
+  text-align: center;
+}
+.register-main .err-msg {
+  color: #db3a3a;
+  margin: 1rem;
+}
+.register-main form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.register-main form .register-input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.register-main form .register-input .circle {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 1px solid #393a4b;
+}
+.register-main form .register-input input {
+  background-color: hsl(235deg, 24%, 19%);
+  padding: 0.7rem;
+  color: white;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid rgba(227, 228, 241, 0.0588235294);
+}
+.register-main form .register-input input:focus {
+  outline: none;
+}
+.register-main form .register-input input.invailed {
+  border-bottom: 1px solid #db3a3a;
+}
+.register-main form .register-input input.invailed::-moz-placeholder {
+  color: #db3a3a;
+}
+.register-main form .register-input input.invailed:-ms-input-placeholder {
+  color: #db3a3a;
+}
+.register-main form .register-input input.invailed::placeholder {
+  color: #db3a3a;
+}
+.register-main form button {
+  width: 8rem;
+  color: hsl(220deg, 98%, 61%);
+  background-color: transparent;
+  border: none;
+  font-size: 1.2rem;
+  align-self: center;
+  padding: 7px;
+  border-bottom: 1px solid rgba(227, 228, 241, 0.0588235294);
+  cursor: pointer;
+  transition: 0.7s ease all;
+  margin-bottom: 1rem;
+}
+.register-main form button:hover {
+  border-bottom: 1px solid white;
+}
+.register-main .to-login {
+  color: white;
+  text-align: center;
+  margin-top: 1rem;
+}
+.register-main .to-login a {
+  color: hsl(220deg, 98%, 61%);
+  text-decoration: none;
+}
+
+.app.light .register-main {
+  background-color: white;
+  box-shadow: 0 0 10px 15px rgba(0, 0, 0, 0.0705882353);
+}
+.app.light .register-main form .register-input .circle {
+  border: 1px solid rgba(57, 58, 75, 0.4196078431);
+}
+.app.light .register-main form .register-input input {
+  background-color: white;
+  color: black;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1294117647);
+}
+.app.light .register-main form .register-input input.invailed {
+  border-bottom: 1px solid #db3a3a;
+}
+.app.light .register-main form .register-input input.invailed::-moz-placeholder {
+  color: #db3a3a;
+}
+.app.light .register-main form .register-input input.invailed:-ms-input-placeholder {
+  color: #db3a3a;
+}
+.app.light .register-main form .register-input input.invailed::placeholder {
+  color: #db3a3a;
+}
+.app.light .register-main form button {
+  color: hsl(220deg, 98%, 61%);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1294117647);
+}
+.app.light .register-main form button:hover {
+  border-bottom: 1px solid hsl(220deg, 98%, 61%);
+}
+.app.light .register-main .to-login {
+  color: rgba(0, 0, 0, 0.7490196078);
+}
+.app.light .register-main .to-login a {
+  color: hsl(220deg, 98%, 61%);
+}
+
+.lds-ellipsis {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 20px;
+}
+
+.lds-ellipsis div {
+  position: absolute;
+  top: 5px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: white;
+  -webkit-animation-timing-function: cubic-bezier(0, 1, 1, 0);
+          animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+
+.lds-ellipsis div:nth-child(1) {
+  left: 8px;
+  -webkit-animation: lds-ellipsis1 0.6s infinite;
+          animation: lds-ellipsis1 0.6s infinite;
+}
+
+.lds-ellipsis div:nth-child(2) {
+  left: 8px;
+  -webkit-animation: lds-ellipsis2 0.6s infinite;
+          animation: lds-ellipsis2 0.6s infinite;
+}
+
+.lds-ellipsis div:nth-child(3) {
+  left: 32px;
+  -webkit-animation: lds-ellipsis2 0.6s infinite;
+          animation: lds-ellipsis2 0.6s infinite;
+}
+
+.lds-ellipsis div:nth-child(4) {
+  left: 56px;
+  -webkit-animation: lds-ellipsis3 0.6s infinite;
+          animation: lds-ellipsis3 0.6s infinite;
+}
+
+@-webkit-keyframes lds-ellipsis1 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes lds-ellipsis1 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@-webkit-keyframes lds-ellipsis3 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes lds-ellipsis3 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@-webkit-keyframes lds-ellipsis2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(24px, 0);
+  }
+}
+@keyframes lds-ellipsis2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(24px, 0);
+  }
+}
+.lds-ring {
+  display: inline-block;
+  position: relative;
+  width: 70px;
+  height: 70px;
+}
+
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 54px;
+  height: 54px;
+  margin: 8px;
+  border: 8px solid #fff;
+  border-radius: 50%;
+  -webkit-animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+          animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: hsl(236deg, 9%, 61%) transparent transparent transparent;
+}
+
+.lds-ring div:nth-child(1) {
+  -webkit-animation-delay: -0.45s;
+          animation-delay: -0.45s;
+}
+
+.lds-ring div:nth-child(2) {
+  -webkit-animation-delay: -0.3s;
+          animation-delay: -0.3s;
+}
+
+.lds-ring div:nth-child(3) {
+  -webkit-animation-delay: -0.15s;
+          animation-delay: -0.15s;
+}
+
+@-webkit-keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}/*# sourceMappingURL=index.css.map */

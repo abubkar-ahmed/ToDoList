@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    vertical-align: baseline;
+    box-sizing: border-box;
+}
+
+
+.app{
+    width: 100%;
+    min-height: 100vh;
+    font-family: 'Josefin Sans', sans-serif;
+    background-image: url(./imgs/bg-desktop-dark.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-color: $Very-Dark-Blue;
+    padding: 70px 0;
+
+}
+
+nav{
+    width: fit-content;
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    display: flex;
+    gap: 1.5rem;
+    a{
+        text-decoration: none;
+        color: white;
+        transition: 0.4s ease all;
+        &:hover{
+            color: $Bright-Blue;
+        }
+        &.active{
+            color: $Bright-Blue;
+        }
+    }
+    &.logged-in {
+        justify-content: center;
+        align-items: center;
+        p{
+            color: white;
+        }
+    }
+}
+
+.app.light{
+    background-image: url(./imgs/bg-desktop-light.jpg);
+    background-color: $Very-Light-Gray;
+    nav {
+        a{
+            text-decoration: none;
+            color: white;
+            transition: 0.4s ease all;
+            &:hover{
+                color: $Very-Dark-Blue;
+            }
+            &.active{
+                color: $Very-Dark-Blue;
+            }
+        }
+    }
+}
+
+@media (max-width : 668px) {
+    .app{
+        background-image: url(./imgs/bg-mobile-dark.jpg);
+        
+    }
+    .app.light{
+        background-image: url(./imgs/bg-mobile-light.jpg);
+
+    }
+    nav{
+        top: 40px;
+        right: 50%;
+        transform: translate(50% , 0%);
+    }
+    
+}
+
+

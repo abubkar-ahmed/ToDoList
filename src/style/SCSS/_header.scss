@@ -1,0 +1,33 @@
+header {
+    width: 500px;
+    margin: auto;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    a{
+        text-decoration: none;
+        h1{
+            color: white;
+            text-transform: uppercase;
+            letter-spacing: 10px;
+            font-size: 35px;
+            padding-top: 7px;
+        }
+    }
+
+    img{
+        cursor: pointer;
+        width: 26px;
+        height: 26px;
+    }
+}
+
+
+@media (max-width : 668px) {
+    header {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+}
