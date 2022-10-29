@@ -93,7 +93,7 @@ function Login() {
         </div>
         <button>Login</button>
       </form>
-      <p className='to-login'>Need An Acount? <NavLink to='/register'>Register</NavLink></p>
+      <p className='to-login'>Need An Account? <NavLink to='/register'>Register</NavLink></p>
   </main>
   )
 }

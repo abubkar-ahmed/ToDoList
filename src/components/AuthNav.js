@@ -34,8 +34,8 @@ function AuthNav() {
       {auth.user ? 
       (
         <nav className='logged-in'>
-        <p>{auth.user}</p>
-        <a href='#' onClick={logOut}>Log Out</a>
+          <p>{auth.user}</p>
+          <a href='#' onClick={logOut}>Log Out</a>
         </nav>
       )
       :

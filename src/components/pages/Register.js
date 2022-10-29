@@ -121,7 +121,7 @@ function Register() {
         </div>
         <button>Register</button>
       </form>
-      <p className='to-login'>Already Have An Acount? <NavLink to='/login'>Login</NavLink></p>
+      <p className='to-login'>Already Have An Account? <NavLink to='/login'>Login</NavLink></p>
     </main>
   )
 }
