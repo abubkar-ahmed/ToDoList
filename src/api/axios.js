@@ -1,5 +1,5 @@
 import axios from 'axios';
-const BASE_URL = 'https://todolistapi-production.up.railway.app';
+const BASE_URL = 'https://todolist-api-c9su.onrender.com';
 
 export default axios.create({
     baseURL: BASE_URL,
